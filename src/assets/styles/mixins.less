@@ -1,0 +1,14 @@
+// 鼠标经过时，动画：阴影上移
+.hoverShadow() {
+    transition: all .5s;
+
+    &:hover {
+        transform: translate3d(0, -3px, 0);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// 问题：每次混入上面这段代码的时候，都需要用@import 来导入，不方便
+
+// 解决方式：使用vuecli的style-resources-loader插件，把上述代码自动注入到每个less文件或vue组件中的style标签中
+// 添加插件后不要忘了配置一下需要注入的文件
